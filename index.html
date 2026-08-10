@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rafia — Backend Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #14181B;      /* swap for your kit's exact Ink hex */
+    --paper: #FAF8F4;    /* swap for your kit's exact Paper hex */
+    --slate: #5C6570;    /* swap for your kit's exact Slate hex */
+    --brass: #B08D57;    /* swap for your kit's exact Brass hex */
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 24px;
+  }
+  .monogram {
+    width: 56px;
+    height: 56px;
+    border: 1.5px solid var(--ink);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .monogram::after {
+    content: '';
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    width: 6px;
+    height: 6px;
+    background: var(--brass);
+    border-radius: 50%;
+  }
+  h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: clamp(24px, 4vw, 36px);
+    max-width: 640px;
+    line-height: 1.3;
+  }
+  p.status {
+    margin-top: 18px;
+    color: var(--slate);
+    font-size: 14px;
+    letter-spacing: 0.02em;
+  }
+  .brass-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: var(--brass);
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+</style>
+</head>
+<body>
+  <div class="monogram">R</div>
+  <h1>I turn AI-powered ideas into backends that hold up in production.</h1>
+  <p class="status"><span class="brass-dot"></span>Site under construction — full build coming soon.</p>
+</body>
+</html>
