@@ -4,78 +4,162 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rafia — Backend Engineer</title>
+<meta name="description" content="Rafia turns AI-powered ideas into backends that hold up in production. FastAPI, Flask, Postgres, and applied LLM tooling.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --ink: #14181B;      /* swap for your kit's exact Ink hex */
-    --paper: #FAF8F4;    /* swap for your kit's exact Paper hex */
-    --slate: #5C6570;    /* swap for your kit's exact Slate hex */
-    --brass: #B08D57;    /* swap for your kit's exact Brass hex */
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    background: var(--paper);
-    color: var(--ink);
-    font-family: 'IBM Plex Sans', sans-serif;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 24px;
-  }
-  .monogram {
-    width: 56px;
-    height: 56px;
-    border: 1.5px solid var(--ink);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    font-size: 22px;
-    margin-bottom: 28px;
-    position: relative;
-  }
-  .monogram::after {
-    content: '';
-    position: absolute;
-    bottom: 6px;
-    right: 6px;
-    width: 6px;
-    height: 6px;
-    background: var(--brass);
-    border-radius: 50%;
-  }
-  h1 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 500;
-    font-size: clamp(24px, 4vw, 36px);
-    max-width: 640px;
-    line-height: 1.3;
-  }
-  p.status {
-    margin-top: 18px;
-    color: var(--slate);
-    font-size: 14px;
-    letter-spacing: 0.02em;
-  }
-  .brass-dot {
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    background: var(--brass);
-    border-radius: 50%;
-    margin-right: 8px;
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="monogram">R</div>
-  <h1>I turn AI-powered ideas into backends that hold up in production.</h1>
-  <p class="status"><span class="brass-dot"></span>Site under construction — full build coming soon.</p>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="monogram">R</span>
+      Rafia
+    </a>
+    <nav class="primary-nav">
+      <ul>
+        <li><a href="index.html#work" class="current">Work</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Backend Engineer</span>
+    <h1>I turn AI-powered ideas into backends that hold up in production.</h1>
+    <p class="lede">Software Engineering graduate building auth systems, LLM-backed APIs, and data pipelines that keep working after the demo ends. Three shipped backends below, with the rate-limit bugs and failure points left in.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="index.html#work">See the work</a>
+      <a class="btn btn-secondary" href="index.html#contact">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<section class="proof-strip">
+  <div class="wrap">
+    <div class="proof-item">
+      <span class="num">3.79</span>
+      <span class="label">GPA, BSSE</span>
+    </div>
+    <div class="proof-item">
+      <span class="num">3</span>
+      <span class="label">Backends shipped to production hosts</span>
+    </div>
+    <div class="proof-item">
+      <span class="num">1</span>
+      <span class="label">VC Talent Scholarship winner</span>
+    </div>
+    <div class="proof-item">
+      <span class="num">7</span>
+      <span class="label">Projects built end to end</span>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Selected work</span>
+      <h2>Backends built to hold up, not just demo well.</h2>
+    </div>
+
+    <div class="case-grid">
+      <a class="case-card" href="case-auth-api.html">
+        <span class="stack">FASTAPI · SUPABASE · POSTGRES</span>
+        <h3>Auth API</h3>
+        <p>A production-shaped authentication API — signup, login, session handling, and rate limiting — built on FastAPI with Supabase as the identity and data layer.</p>
+        <span class="open-link">Read the case study →</span>
+      </a>
+
+      <a class="case-card" href="case-chatbot.html">
+        <span class="stack">FLASK · GROQ (LLAMA-3.3-70B)</span>
+        <h3>AI Chatbot Backend</h3>
+        <p>A Flask service wrapping Groq's llama-3.3-70b with conversation memory and tool-calling, so the model can act rather than just answer.</p>
+        <span class="open-link">Read the case study →</span>
+      </a>
+
+      <a class="case-card" href="case-resume-screening.html">
+        <span class="stack">LLM · POSTGRES · HUGGING FACE SPACES</span>
+        <h3>Resume Screening System</h3>
+        <p>An LLM-powered screening pipeline that scores resumes against a role, backed by Postgres and deployed live on Hugging Face Spaces.</p>
+        <span class="open-link">Read the case study →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="also-built">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Also built</span>
+      <h2>Smaller builds, still real.</h2>
+    </div>
+    <ul>
+      <li>
+        <span class="name">Verti Nutrient System</span>
+        <span class="desc">Nutrient tracking and scheduling logic for a vertical-farming setup.</span>
+      </li>
+      <li>
+        <span class="name">Plant Disease Detection</span>
+        <span class="desc">Image-classification pipeline for identifying plant disease from leaf photos.</span>
+      </li>
+      <li>
+        <span class="name">Translation Tool</span>
+        <span class="desc">A lightweight text translation utility with a simple request/response API.</span>
+      </li>
+      <li>
+        <span class="name">Smart File Organizer</span>
+        <span class="desc">A script that classifies and sorts local files by type and content.</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Want the backend behind your next AI idea?</h2>
+    <p>I'm looking for backend engineering roles — auth systems, API design, and LLM-backed services that need to survive contact with real users.</p>
+    <a class="btn btn-primary" href="index.html#contact">Get in touch</a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="about-photo">
+      Photo not added yet
+    </div>
+    <div>
+      <span class="eyebrow">About</span>
+      <h2>Backend-first, AI-native.</h2>
+      <p>I'm a Software Engineering graduate (BSSE, 3.79 GPA) and VC Talent Scholarship winner. I like the part of AI projects most people skip past: the API that has to keep responding correctly at 2am, the auth flow that has to survive a rate-limit spike, the database schema that has to still make sense six months in.</p>
+      <p>My work leans on FastAPI, Flask, Postgres, and Supabase, with LLMs (via Groq and Hugging Face) as a component of the system rather than the whole system. I write down what broke and what I'd do differently — that accounting is part of the deliverable, not an afterthought.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <span class="eyebrow">Contact</span>
+    <h2>Say hello</h2>
+    <p class="lede" style="margin-bottom:1.4rem;">Reachable by email or on GitHub — add your preferred links here before sharing this URL.</p>
+    <ul class="contact-list">
+      <li><a href="mailto:your-email@example.com">your-email@example.com</a></li>
+      <li><a href="https://github.com/Rafiaa01" target="_blank" rel="noopener">GitHub — Rafiaa01</a></li>
+      <li><a href="#" target="_blank" rel="noopener">LinkedIn (add link)</a></li>
+    </ul>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Rafia — Backend Engineer</span>
+    <span>Built with FastAPI, Flask, and a lot of honest debugging.</span>
+  </div>
+</footer>
+
 </body>
 </html>

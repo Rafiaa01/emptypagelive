@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auth API — Rafia</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="monogram">R</span> Rafia</a>
+    <nav class="primary-nav">
+      <ul>
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="case-hero">
+  <div class="wrap">
+    <span class="stack">FASTAPI · SUPABASE · POSTGRES</span>
+    <h1>Auth API</h1>
+    <p class="lede">A production-shaped authentication API — signup, login, session handling, and rate limiting — built on FastAPI with Supabase as the identity and data layer.</p>
+    <div class="case-links">
+      <!-- TODO(Rafia): confirm this is the right repo before publishing -->
+      <a class="btn btn-primary" href="https://github.com/Rafiaa01/supabase" target="_blank" rel="noopener">View repo</a>
+      <a class="btn btn-secondary" href="index.html#contact">Ask about this build</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap case-body">
+    <h2>The problem</h2>
+    <p>Most tutorial auth flows work until real traffic hits them. This project was about building an auth API that behaves correctly under the conditions that actually break auth: repeated login attempts, expired sessions, and concurrent signups — not just the happy path of one user signing up once.</p>
+
+    <h2>How it's built</h2>
+    <p>FastAPI handles routing and request validation, with Supabase providing managed Postgres, user identity, and row-level security. The API exposes endpoints for signup, login, token refresh, and session invalidation, with request validation enforced at the schema level before anything touches the database.</p>
+
+    <h2>What I'd explain if you asked</h2>
+    <ul>
+      <li>Why FastAPI over Flask here: built-in request validation via Pydantic models cuts down a whole category of malformed-input bugs before they reach business logic.</li>
+      <li>How Supabase's row-level security policies are used to keep one user's data from being reachable by another user's session token.</li>
+      <li>Where rate limiting sits in the request lifecycle, and why it's applied before the database call rather than after.</li>
+    </ul>
+
+    <div class="honest-box">
+      <span class="eyebrow">Honest accounting</span>
+      <p><strong>What broke:</strong> initial rate-limiting logic let repeated failed logins through without a backoff window, which meant a scripted attempt could hammer the login endpoint. That was found and fixed during testing, not caught by design — a reminder that rate limits need to be tested adversarially, not just implemented and assumed to work.</p>
+      <p><strong>What's still rough:</strong> no automated test suite yet — testing so far has been manual, via requests against a local instance.</p>
+    </div>
+
+    <a class="back-link" href="index.html#work">← Back to work</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Rafia — Backend Engineer</span>
+    <span><a href="index.html">Home</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

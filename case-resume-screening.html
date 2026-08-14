@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume Screening System — Rafia</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="monogram">R</span> Rafia</a>
+    <nav class="primary-nav">
+      <ul>
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="case-hero">
+  <div class="wrap">
+    <span class="stack">LLM · POSTGRES · HUGGING FACE SPACES</span>
+    <h1>Resume Screening System</h1>
+    <p class="lede">An LLM-powered screening pipeline that scores resumes against a role description, backed by Postgres and deployed live on Hugging Face Spaces.</p>
+    <div class="case-links">
+      <!-- TODO(Rafia): add live Hugging Face Space link once ready -->
+      <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Live demo (add link)</a>
+      <!-- TODO(Rafia): add correct repo link -->
+      <a class="btn btn-secondary" href="#" target="_blank" rel="noopener">View repo (add link)</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap case-body">
+    <h2>The problem</h2>
+    <p>Screening resumes by hand doesn't scale, and a naive keyword match misses candidates who describe the same skill differently than the job post does. This system needed to score a resume against a role in a way that's consistent, explainable, and stored — not a one-off prompt with no record of how it decided.</p>
+
+    <h2>How it's built</h2>
+    <p>Resumes and role descriptions are parsed and passed to an LLM that produces a structured score with reasoning, which is written to Postgres alongside the original inputs. The whole thing runs on Hugging Face Spaces, so the pipeline is reachable as a live tool rather than a local script.</p>
+
+    <h2>What I'd explain if you asked</h2>
+    <ul>
+      <li>Why the score is stored with its reasoning, not just a number — so a decision can be reviewed later, not just trusted blindly.</li>
+      <li>How the Postgres schema separates raw input (resume, role) from derived output (score, reasoning), so re-scoring with a new prompt doesn't destroy the original data.</li>
+      <li>The tradeoffs of deploying on Hugging Face Spaces versus a dedicated backend host, for this project's scale.</li>
+    </ul>
+
+    <div class="honest-box">
+      <span class="eyebrow">Honest accounting</span>
+      <p><strong>Vendor benchmark caveat:</strong> scoring quality depends on the underlying model's judgment, which isn't independently verified against a labeled dataset yet — treat scores as a strong first pass, not a certified ranking.</p>
+      <p><strong>What's still rough:</strong> no bulk-upload flow yet — resumes are currently submitted one at a time.</p>
+    </div>
+
+    <a class="back-link" href="index.html#work">← Back to work</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Rafia — Backend Engineer</span>
+    <span><a href="index.html">Home</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

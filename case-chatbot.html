@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Chatbot Backend — Rafia</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="monogram">R</span> Rafia</a>
+    <nav class="primary-nav">
+      <ul>
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="case-hero">
+  <div class="wrap">
+    <span class="stack">FLASK · GROQ (LLAMA-3.3-70B)</span>
+    <h1>AI Chatbot Backend</h1>
+    <p class="lede">A Flask service wrapping Groq's llama-3.3-70b with conversation memory and tool-calling, so the model can act on a request rather than just describe what it would do.</p>
+    <div class="case-links">
+      <!-- TODO(Rafia): add correct repo link -->
+      <a class="btn btn-primary" href="#" target="_blank" rel="noopener">View repo (add link)</a>
+      <a class="btn btn-secondary" href="index.html#contact">Ask about this build</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap case-body">
+    <h2>The problem</h2>
+    <p>A chatbot that only answers in a single turn isn't useful for much beyond a demo. This backend needed two things a bare LLM call doesn't give you for free: memory across turns, and the ability to actually call tools instead of just describing what it would do.</p>
+
+    <h2>How it's built</h2>
+    <p>Flask handles the API surface. Each incoming message is appended to a stored conversation history and sent to Groq's llama-3.3-70b, which can invoke registered tools mid-conversation. Tool results are fed back into the model before it produces its final reply, so a single user message can trigger a lookup and a response in one round trip.</p>
+
+    <h2>What I'd explain if you asked</h2>
+    <ul>
+      <li>How conversation memory is stored and trimmed, so the context sent to the model doesn't grow unbounded.</li>
+      <li>The tool-calling loop: how the model's tool request is parsed, executed, and the result routed back in before a final answer is generated.</li>
+      <li>Why Groq specifically — inference latency was a real constraint for a conversational product, not an incidental choice.</li>
+    </ul>
+
+    <div class="honest-box">
+      <span class="eyebrow">Honest accounting</span>
+      <p><strong>What broke:</strong> early versions let the conversation history grow without limit, which eventually pushed requests past the model's context window on long sessions. Fixed with a trimming strategy that keeps recent turns and a summary of older ones.</p>
+      <p><strong>What's still rough:</strong> tool-calling currently supports a small, fixed set of tools — adding a new one still means a code change and redeploy, not a config change.</p>
+    </div>
+
+    <a class="back-link" href="index.html#work">← Back to work</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Rafia — Backend Engineer</span>
+    <span><a href="index.html">Home</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
