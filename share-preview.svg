@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#15181C"/>
+  <rect x="0" y="0" width="10" height="630" fill="#C08A3E"/>
+
+  <text x="80" y="140" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="36" fill="#C08A3E">R</text>
+  <text x="130" y="140" font-family="IBM Plex Sans, sans-serif" font-weight="500" font-size="28" fill="#F5F6F4">Rafia</text>
+
+  <text font-family="Space Grotesk, sans-serif" font-weight="600" font-size="52" fill="#F5F6F4">
+    <tspan x="80" y="260">I turn AI-powered ideas</tspan>
+    <tspan x="80" y="325">into backends that hold</tspan>
+    <tspan x="80" y="390">up in production.</tspan>
+  </text>
+
+  <text x="80" y="470" font-family="IBM Plex Sans, sans-serif" font-weight="400" font-size="26" fill="#33475A">
+    FastAPI · Flask · Postgres · Applied LLM Tooling
+  </text>
+
+  <text x="80" y="560" font-family="IBM Plex Sans, sans-serif" font-weight="500" font-size="22" fill="#C08A3E">
+    rafiaa01.github.io/emptypagelive
+  </text>
+</svg>
